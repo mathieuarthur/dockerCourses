@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build:
+      context: ./01-WebApp-Front
+    container_name: frontend
+    ports:
+      - "8000:8000"
+
+  backend:
+    build:
+      context: ./02-WebApp-Back
+    container_name: backend
+    ports:
+      - "3000:3000"
