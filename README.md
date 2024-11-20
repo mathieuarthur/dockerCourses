@@ -43,6 +43,7 @@ sudo apt install python3-venv
 ### Node Installation
 
 ```bash
+sudo apt install curl
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
 nvm install --lts
 node -v
@@ -51,7 +52,17 @@ npm -v
 
 ### Docker Desktop Installation
 
-WIP
+```bash
+sudo apt update
+sudo apt install certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+curl 'https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64' -o dockerDesktop.deb #If downloading the .deb via cli do not work go directly to the link with your browser
+sudo apt install./dockerDesktop.deb
+```
 
 ## Setup Project
 
