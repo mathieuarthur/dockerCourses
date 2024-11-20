@@ -37,6 +37,7 @@ python3 --version #verify if you have python installed already
 sudo apt update
 sudo apt install python3
 sudo apt install python3-pip
+sudo apt install python3-venv
 ```
 
 ### Node Installation
@@ -65,7 +66,9 @@ npm run dev
 
 ### Start Back Command
 ```
-pip install -r requirements.txt
+python3 -m venv myenv
+source ./myenv/bin/activate
+pip install "fastapi[standard]"
 fastapi dev main.py
 ```
 
