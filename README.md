@@ -109,4 +109,14 @@ docker compose build
 docker compose up -d
 ```
 
+### Show docker images
+```bash
+docker images
+```
 
+### Manage docker containers
+```bash
+docker ps
+docker stop "container_id"
+docker rm "container_id"
+```
